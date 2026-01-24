@@ -1,0 +1,31 @@
+name: Bug Report
+description: Something isn't working right? Let us know.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Thanks for reporting!** Don't worry if you can't fill out everything—just tell us what's going on.
+  - type: textarea
+    id: description
+    attributes:
+      label: What's happening?
+      description: Describe the bug and what you expected to happen instead.
+      placeholder: "I tried to use the !layout directive but..."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Code Snippet (Optional)
+      description: If you have the code that caused the error, paste it here.
+      render: python
+      value: |
+        # Paste your .wire code here
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Browser, or pywire version (if you know it).
+      placeholder: e.g., Windows, Chrome, pywire 0.1.0
