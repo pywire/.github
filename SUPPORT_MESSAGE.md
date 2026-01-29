@@ -1,8 +1,3 @@
-# .github
-
-Organization-wide GitHub configurations and workflows for PyWire.
-
-<!-- SUPPORT_MESSAGE_TEMPLATE_START -->
 ## ❤️ Support pywire
 
 If pywire is helping you build, consider supporting the project. Donations cover documentation hosting, CI/CD runners, and the caffeine required for development.
@@ -14,4 +9,3 @@ If pywire is helping you build, consider supporting the project. Donations cover
 * 🚀 Faster development of the core framework.
 * 📖 Better docs and community examples.
 * 🔧 Integration research.
-<!-- SUPPORT_MESSAGE_TEMPLATE_END -->
