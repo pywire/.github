@@ -1,6 +1,6 @@
 # .github
 
-Organization-wide GitHub configurations and workflows for PyWire.
+Organization-wide GitHub configurations and workflows for pywire.
 
 <!-- SUPPORT_MESSAGE_TEMPLATE_START -->
 ## ❤️ Support pywire
