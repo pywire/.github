@@ -26,9 +26,27 @@
 | [**pywire-language-server**](https://github.com/pywire/pywire-language-server) | The brain behind the tooling. LSP implementation for `.wire` files. |
 | [**examples**](https://github.com/pywire/examples) | Real-world examples. |
 
-### Quick Start
+<!-- INSTALL_MESSAGE_TEMPLATE_START -->
+## 🚀 Quick Start
 
-*Coming soon.* While we complete the migration, you can view the proof-of-concept code in the [archived repository](https://github.com/reecelikesramen/pyhtml).
+If you already have [uv](https://docs.astral.sh/uv/) installed, you can get started instantly:
+
+```bash
+uvx create-pywire-app
+```
+
+If you don't have `uv` installed or aren't sure, use our installer script which handles the setup for you:
+
+### macOS / Linux
+```bash
+curl -fsSL pywire.dev/install | sh
+```
+
+### Windows (PowerShell)
+```powershell
+irm pywire.dev/install.ps1 | iex
+```
+<!-- INSTALL_MESSAGE_TEMPLATE_END -->
 
 <!--### Community & Support
 
