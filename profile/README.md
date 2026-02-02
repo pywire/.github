@@ -2,10 +2,7 @@
 
 ### The Live Conduit for Python and the Web.
 
-> **🚧 Migration in Progress**
-> 
-> **pywire** is currently migrating from its original home at [reecelikesramen/pyhtml](https://github.com/reecelikesramen/pyhtml). 
-> We are in the process of moving the core runtime, tooling, and documentation to this new organization. Expect rapid changes and some broken links as we settle into our new `.wire` architecture.
+**pywire v0.1.0 is now available!** 🚀
 
 **pywire** is a Python HTML-over-the-wire framework that combines server-side logic with reactive HTML templates in single `.wire` files. It bridges the gap between your backend and frontend with a persistent, real-time connection.
 
@@ -21,10 +18,11 @@
 
 | Repository | Description |
 | :--- | :--- |
-| [**pywire**](https://github.com/pywire/pywire) | The core framework, CLI, and runtime. Start here. |
-| [**vscode-pywire**](https://github.com/pywire/vscode-pywire) | Official VS Code extension for syntax highlighting and snippets. |
-| [**pywire-language-server**](https://github.com/pywire/pywire-language-server) | The brain behind the tooling. LSP implementation for `.wire` files. |
-| [**examples**](https://github.com/pywire/examples) | Real-world examples. |
+| [**pywire**](https://github.com/pywire/pywire) | The core framework, CLI, and runtime. |
+| [**create-pywire-app**](https://github.com/pywire/create-pywire-app) | Official project bootstrapping tool. |
+| [**vscode-pywire**](https://github.com/pywire/vscode-pywire) | Syntax highlighting, snippets, and LSP integration for VS Code. |
+| [**pywire-language-server**](https://github.com/pywire/pywire-language-server) | Language Server Protocol implementation for `.wire` files. |
+| [**examples**](https://github.com/pywire/examples) | Reference implementations and community examples. |
 
 <!-- INSTALL_MESSAGE_TEMPLATE_START -->
 ## 🚀 Quick Start
@@ -48,11 +46,11 @@ irm pywire.dev/install.ps1 | iex
 ```
 <!-- INSTALL_MESSAGE_TEMPLATE_END -->
 
-<!--### Community & Support
+### Community & Support
 
 * 💬 **Discord:** [Join the Community](https://pywire.dev/discord) - Get help and discuss ideas.
 * 🐞 **Bugs:** Please file issues in the [pywire/pywire](https://github.com/pywire/pywire/issues) repository.
-* 📖 **Docs:** Read the full documentation at [pywire.dev](https://pywire.dev).-->
+* 📖 **Docs:** Read the full documentation at [pywire.dev](https://pywire.dev).
 
 ---
 
