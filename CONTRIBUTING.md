@@ -29,14 +29,14 @@ pywire is a polyrepo organization. These instructions generally apply to the `py
 1.  **Fork** the repository you want to work on (e.g., `pywire/pywire`) to your own GitHub account.
 2.  **Clone** your fork to your local machine:
 
-    ```bash
+    ```sh
     git clone https://github.com/your-username/pywire.git
     cd pywire
     ```
 
 3.  **Set up your environment**. We use `uv` to manage the workspace and dependencies:
 
-    ```bash
+    ```sh
     ./scripts/install
     ```
 
@@ -61,7 +61,7 @@ We enforce strict code style to keep the codebase clean and readable. We use [Ru
 
 We use `pytest` for testing. Please ensure all tests pass before submitting a Pull Request.
 
-```bash
+```sh
 ./scripts/test
 ```
 
@@ -83,14 +83,14 @@ To ensure that you have the right to contribute your code, we require all change
 
 You can sign off your commits by adding the `-s` flag:
 
-```bash
+```sh
 git commit -s -m "feat: add new signal handling to server"
 ```
 
 ##  Pull Requests
 
 1.  **Create a branch** for your changes:
-    ```bash
+    ```sh
     git checkout -b my-new-feature
     ```
 2.  **Make your changes**. We prefer uses of [Conventional Commits](https://www.conventionalcommits.org/) for commit messages (e.g., `feat: add new signal handling to server`).
