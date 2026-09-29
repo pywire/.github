@@ -1,59 +1,48 @@
 # pywire
 
-### The Live Conduit for Python and the Web.
+### The Live Conduit for Python
 
-**pywire v0.1.0 is now available!** 🚀
+**pywire** is an HTML-over-the-wire web framework for Python. The server renders HTML and streams DOM updates to the browser over WebSocket, so you get an interactive app without writing JavaScript, a JSON API, or client state sync.
 
-**pywire** is a Python HTML-over-the-wire framework that combines server-side logic with reactive HTML templates in single `.wire` files. It bridges the gap between your backend and frontend with a persistent, real-time connection.
+Pages and components are `.wire` files: Python, HTML, CSS and optional JS in one file.
 
+```pywire
 ---
-
-### Core Philosophy
-
-* **⚡️ Instant Reactivity:** State changes on the server are reflected in the browser instantly via WebTransport/WebSocket.
-* **🧬 Single-File Components:** Write Python logic and HTML structure in one `.wire` file.
-* **🔋 Zero Boilerplate:** No API endpoints, no serializers, no complex JavaScript build steps.
-
-### The Ecosystem
-
-| Repository | Description |
-| :--- | :--- |
-| [**pywire**](https://github.com/pywire/pywire) | The core framework, CLI, and runtime. |
-| [**create-pywire-app**](https://github.com/pywire/create-pywire-app) | Official project bootstrapping tool. |
-| [**vscode-pywire**](https://github.com/pywire/vscode-pywire) | Syntax highlighting, snippets, and LSP integration for VS Code. |
-| [**pywire-language-server**](https://github.com/pywire/pywire-language-server) | Language Server Protocol implementation for `.wire` files. |
-| [**examples**](https://github.com/pywire/examples) | Reference implementations and community examples. |
+count = wire(0)
+---
+<button @click={count += 1}>Clicked {count} times</button>
+```
 
 <!-- INSTALL_MESSAGE_TEMPLATE_START -->
-## 🚀 Quick Start
+## Quick start
 
-If you already have [uv](https://docs.astral.sh/uv/) installed, you can get started instantly:
+Use whichever tool you already have. All three launch the same wizard:
 
 ```sh
-uvx create-pywire-app
+uvx create-pywire-app                              # uv (recommended)
+npx create-pywire-app                              # Node.js, installs uv if missing
+curl -fsSL https://pywire.dev/install | sh         # neither: installs uv, then the wizard
 ```
 
-If you don't have `uv` installed or aren't sure, use our installer script which handles the setup for you:
-
-### macOS / Linux
-```sh
-curl -fsSL pywire.dev/install | sh
-```
-
-### Windows (PowerShell)
-```powershell
-irm pywire.dev/install.ps1 | iex
-```
+On Windows (PowerShell): `irm https://pywire.dev/install.ps1 | iex`
 <!-- INSTALL_MESSAGE_TEMPLATE_END -->
 
-### Community & Support
+### Where things live
 
-* 💬 **Discord:** [Join the Community](https://pywire.dev/discord) - Get help and discuss ideas.
-* 🐞 **Bugs:** Please file issues in the [pywire/pywire](https://github.com/pywire/pywire/issues) repository.
-* 📖 **Docs:** Read the full documentation at [pywire.dev](https://pywire.dev).
+Everything except the marketing site is developed in one monorepo.
 
----
+| Repository | What it holds |
+| :--- | :--- |
+| [**pywire/pywire**](https://github.com/pywire/pywire) | Core framework, parser, CLI, auth, language server, VS Code extension, Prettier plugin, tree-sitter grammar, create-pywire-app, docs and examples. Issues go here. |
+| [**pywire/pywire.dev**](https://github.com/pywire/pywire.dev) | The [pywire.dev](https://pywire.dev) marketing site and its infrastructure. |
 
-<div align="center">
-  <sub>Built with the speed of Python and the power of the Web.</sub>
-</div>
+The older standalone repositories (pywire-core, pywire-language-server, vscode-pywire, prettier-plugin-pywire, tree-sitter-pywire, create-pywire-app, examples, pywire-workspace) are no longer updated. Their code now lives in the monorepo.
+
+### Links
+
+* **Docs:** [pywire.dev/docs](https://pywire.dev/docs)
+* **Bugs and feature requests:** [pywire/pywire issues](https://github.com/pywire/pywire/issues)
+* **Questions and ideas:** [pywire/pywire discussions](https://github.com/pywire/pywire/discussions)
+* **Contributing:** see the [contributing guide](https://github.com/pywire/.github/blob/main/CONTRIBUTING.md)
+
+Licensed under Apache-2.0.
