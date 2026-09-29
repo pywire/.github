@@ -1,108 +1,63 @@
 # Contributing to pywire
 
-Thank you for your interest in contributing to pywire! 🧡
+Thanks for your interest in pywire. Bug reports, docs improvements and code are all welcome. Please be respectful in every interaction.
 
-pywire is an open-source project, and we welcome contributions of all forms, whether it's reporting bugs, improving documentation, or writing code.
+## Ways to contribute
 
-We strive to be an inclusive and welcoming community. Please be professional and respectful in all interactions.
+* **Bugs:** open an issue in [pywire/pywire](https://github.com/pywire/pywire/issues). Include a small `.wire` snippet and your pywire version if you can.
+* **Features:** open a [discussion](https://github.com/pywire/pywire/discussions) or an issue to talk through the design before writing code.
+* **Docs:** improvements are as useful as code. The docs live in `docs/` in the monorepo.
+* **Code:** see below.
 
-## 🚀 Ways to contribute
+## Development
 
-* **Reporting Bugs:** If you find a bug, please create an issue in the relevant repository within the [pywire organization](https://github.com/pywire).
-* **Suggesting Features:** We love hearing new ideas! Please open a discussion or issue to discuss the design before writing code.
-* **Documentation:** Improvements to docs are just as important as code.
-* **Code:** Help us maintain and improve the pywire framework.
-
-## 🛠 Development
-
-pywire is a polyrepo organization. These instructions generally apply to the `pywire` core repository and related repositories in the workspace.
+pywire is a monorepo. All packages are developed and released from [pywire/pywire](https://github.com/pywire/pywire), and the repo's `AGENTS.md` is the full reference for build, test and conventions. The marketing site is in [pywire/pywire.dev](https://github.com/pywire/pywire.dev).
 
 ### Prerequisites
 
-* **Python:** You need Python 3.11 through 3.14.
-* **uv:** We use [uv](https://github.com/astral-sh/uv) for dependency management.
-* **pnpm:** You may need [pnpm](https://github.com/pnpm/pnpm) (v9+) for working with the pywire client and websites.
-* **Git:** Version control.
+* Python 3.11 to 3.14
+* [uv](https://docs.astral.sh/uv/) for Python packages
+* [pnpm](https://pnpm.io/) 10 and Node 24 for JS packages, docs and the browser client (use pnpm, not npm)
+* A Rust toolchain if you touch the tree-sitter grammar tests
+* Git
 
 ### Setup
 
-1.  **Fork** the repository you want to work on (e.g., `pywire/pywire`) to your own GitHub account.
-2.  **Clone** your fork to your local machine:
+1. Fork [pywire/pywire](https://github.com/pywire/pywire) and clone your fork:
 
     ```sh
     git clone https://github.com/your-username/pywire.git
     cd pywire
     ```
 
-3.  **Set up your environment**. We use `uv` to manage the workspace and dependencies:
+2. Install everything:
 
     ```sh
     ./scripts/install
     ```
 
-4.  **Initialize the project**. Ensure you have the necessary tools installed (like `pnpm` for documentation and client work).
+Useful scripts, from the repo root or any package directory:
 
-    We provide several helper scripts in the `scripts/` directory to make development easier. Here are the most common ones (available in `pywire` and most sub-repositories):
+* `./scripts/check`: format, lint, type check and tests. Use `./scripts/check --changed` to run only the packages your change affects.
+* `./scripts/test`: run the test suites.
+* `./scripts/lint`: format code and fix lint errors.
 
-    *   `scripts/docs`: Runs the documentation development server (requires `pnpm`).
-    *   `scripts/build`: Builds the client and documentation (requires `pnpm`).
-    *   `scripts/check`: Runs the full suite of checks (formatting, linting, type checking, and tests).
-    *   `scripts/lint`: Automatically formats code and fixes linting errors.
-    *   `scripts/test`: Runs the test suite.
+### Code style
 
-### Code Style
+Python uses ruff for formatting and linting and ty for type checking. TypeScript uses prettier, eslint and tsc. Run `./scripts/check` before opening a PR. If you add a feature or fix a bug, add a test in the package's `tests/` directory.
 
-We enforce strict code style to keep the codebase clean and readable. We use [Ruff](https://github.com/astral-sh/ruff) for both formatting and linting, and [mypy](https://mypy-lang.org/) for static type checking.
+## Pull requests
 
-*   **Format/Fix:** Run `./scripts/lint` to automatically format and fix linting errors.
-*   **Verify:** Run `./scripts/check` to verify that everything (formatting, types, tests) is correct.
+1. Create a branch for your change.
+2. Use [Conventional Commits](https://www.conventionalcommits.org/) for commit messages and PR titles, for example `feat(pywire): add signal batching`. Releases are generated from them. Don't put extra parentheses in a PR title beyond the scope, and don't bump versions by hand.
+3. Open the PR against `main`. PRs are squash-merged and need one approving review and passing CI.
 
-### Running Tests
+Checklist:
 
-We use `pytest` for testing. Please ensure all tests pass before submitting a Pull Request.
+* [ ] `./scripts/check` passes.
+* [ ] New behavior has tests.
+* [ ] Docs are updated if needed.
 
-```sh
-./scripts/test
-```
+## License
 
-If you are adding a new feature, please add a corresponding test case in the `tests/` directory.
-
-## 📝 Documentation
-
-Documentation is built using Starlight/Astro. If you are contributing to the documentation (usually in the `docs` folder or a separate `pywire-docs` repo):
-
-1.  Navigate to the docs directory (or use `scripts/docs` from the root of `pywire`).
-2.  Install dependencies via `pnpm`.
-3.  Run the development server to preview changes.
-
-## ⚖️ License & DCO
-
-pywire is licensed under the **Apache 2.0 License**.
-
-To ensure that you have the right to contribute your code, we require all changes to be "Signed-off". This certifies that you wrote the code or have the right to contribute it (Developer Certificate of Origin).
-
-You can sign off your commits by adding the `-s` flag:
-
-```sh
-git commit -s -m "feat: add new signal handling to server"
-```
-
-##  Pull Requests
-
-1.  **Create a branch** for your changes:
-    ```sh
-    git checkout -b my-new-feature
-    ```
-2.  **Make your changes**. We prefer uses of [Conventional Commits](https://www.conventionalcommits.org/) for commit messages (e.g., `feat: add new signal handling to server`).
-3.  **Commit them** (remember to sign-off!).
-4.  **Push** your branch to your fork.
-5.  **Open a Pull Request** against the `main` branch of the upstream repository.
-
-### Checklist for a great PR:
-* [ ] The code follows the code style (run `./scripts/lint`).
-* [ ] You have added tests for new features.
-* [ ] All tests pass (run `./scripts/check`).
-* [ ] You have updated the documentation (if applicable).
-* [ ] You have signed off your commits.
-
-Thank you for contributing!
+pywire is licensed under Apache-2.0. By contributing, you agree that your contributions are licensed under the same terms.
